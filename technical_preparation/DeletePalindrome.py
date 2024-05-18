@@ -11,14 +11,6 @@ def palindromeIndex(s):
             new_string = s[: -i - 1] + s[len(s) - i :]
             if new_string == new_string[::-1]:
                 return len(s) - 1 - i
-
-    """if s == s[::-1]:
-        return -1
-    for i in range(len(s)):
-        new_string = s[:i]+s[i+1:]
-        #new_string.pop(i)
-        if new_string == new_string[::-1]:
-            return i"""
     return -1
 
 
