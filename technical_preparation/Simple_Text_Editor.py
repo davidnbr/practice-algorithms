@@ -81,32 +81,23 @@ class Text:
     def appendd(self, w):  # Type 1
         self.state.append([1, len(w)])
         self.text.extend(w)  # append elements from an iterable w to the end of the list
-        # print(f"type 1: state: {self.state}, text: {self.text}")
 
     def delete(self, k):  # Type 2
         self.state.append([2, self.text[-k:]])
         del self.text[-k:]
         # self.text = self.text[:-k]
-        # print(f"type 2: state: {self.state}, text: {self.text}")
 
     def printt(self, k):
         print(self.text[k - 1])
-        # print(f"type 3: text: {self.text}")
 
     def undo(self):
-        # last_state = self.state[-1]
-        last_state = (
-            self.state.pop()
-        )  # remove and return the last element from the list and save it to a variable
+
+        last_state = ( self.state.pop())  # remove and return the last element from the list and save it to a variable
         if last_state[0] == 1:
-            # self.text = self.text[:-last_state[1]]
+
             del self.text[-last_state[1] :]
         else:
-            self.text.extend(
-                last_state[1]
-            )  # append elements from an iterable w to the end of the list
-        # self.state = self.state[:-1]
-        # print(f"type 4: state: {self.state}, text: {self.text}")
+            self.text.extend(last_state[1])  # append elements from an iterable w to the end of the list
 
 
 if __name__ == "__main__":
