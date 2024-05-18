@@ -56,21 +56,11 @@ def minimumBribes(q):
             if one_brided > 2:
                 print("Too chaotic")
                 return
-            """if j>=i:
-                if q[j]<q[i]:
-                    one_brided+=1
-                if one_brided>2:
-                    print("Too chaotic")
-                    return None
-            if j<i:
-                if q[j]>q[i]:
-                    all_brided+=1"""
 
     print(all_brided)
 
 
 def minimumBribes2(q):
-    # one_brided = 0
     all_brided = 0
     for i in range(len(q)):
         one_brided = 0
@@ -80,25 +70,6 @@ def minimumBribes2(q):
             print("Too chaotic")
             return
         all_brided += len(q_new)
-        # for j in range(i+1, len(q)):
-        """for j in q_new:
-            #if q[i]>q[j]:
-            if q[i]>j:
-                one_brided+=1
-                all_brided+=1
-            if one_brided>2:
-                print("Too chaotic")
-                return"""
-
-        """if j>=i:
-                if q[j]<q[i]:
-                    one_brided+=1
-                if one_brided>2:
-                    print("Too chaotic")
-                    return None
-            if j<i:
-                if q[j]>q[i]:
-                    all_brided+=1"""
 
     print(all_brided)
 
