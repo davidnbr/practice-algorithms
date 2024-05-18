@@ -18,7 +18,11 @@ Note: The cipher only encrypts letters; symbols, such as -.
 
 #!/bin/python3
 
+import math
 import os
+import random
+import re
+import sys
 
 #
 # Complete the 'caesarCipher' function below.
@@ -37,18 +41,21 @@ def caesarCipher(s, k):
     for letter in s:
         if letter in alphabet:
             letter = alphabet[
-                (alphabet.index(letter) + k) - 26 * ((alphabet.index(letter) + k) // 26)]
+                (alphabet.index(letter) + k) - 26 * ((alphabet.index(letter) + k) // 26)
+            ]
 
         elif letter in alphabet_upper:
             letter = alphabet_upper[
                 (alphabet_upper.index(letter) + k)
-                - 26 * ((alphabet_upper.index(letter) + k) // 26)]
+                - 26 * ((alphabet_upper.index(letter) + k) // 26)
+            ]
 
         result += letter
     return result
 
 
 if __name__ == "__main__":
+    fptr = open(os.environ["OUTPUT_PATH"], "w")
 
     n = int(input().strip())
 
@@ -57,3 +64,7 @@ if __name__ == "__main__":
     k = int(input().strip())
 
     result = caesarCipher(s, k)
+
+    fptr.write(result + "\n")
+
+    fptr.close()
