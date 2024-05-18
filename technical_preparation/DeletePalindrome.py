@@ -2,12 +2,12 @@ def palindromeIndex(s):
     if s == s[::-1]:
         return -1
     for i in range(len(s) // 2 + 1):
-        # print(s[i],s[-i-1])
+
         if s[i] != s[-i - 1]:
             new_string = s[:i] + s[i + 1 :]
             if new_string == new_string[::-1]:
                 return i
-            # print(s[:-i-1],s[len(s)-i:])
+
             new_string = s[: -i - 1] + s[len(s) - i :]
             if new_string == new_string[::-1]:
                 return len(s) - 1 - i
